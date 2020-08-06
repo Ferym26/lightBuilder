@@ -35,9 +35,9 @@ module.exports = {
 	},
 
 	deploy: {
-		host:     '77.222.62.218',
-		user:     'studentnru_prior',
-		password: 'kd74hd90Fsn',
+		host:     '000.000.000.000',
+		user:     'user',
+		password: 'pass',
 		parallel: 10,
 	},
 
