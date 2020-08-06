@@ -1,1 +1,82 @@
 .footer
+	position: relative
+	z-index: 566
+
+	&__content
+		padding: 52px 0
+		background: #34393c
+
+		+media($lg)
+			padding: 20px 0 10px
+
+		+media($md)
+			display: none
+
+		&-inner
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding: 0 10px
+
+			+media($lg)
+				flex-direction: column
+				padding: 0
+
+	&__menu
+
+		+media($lg)
+			margin-bottom: 20px
+
+		&-link
+			text-transform: uppercase
+			color: #fff
+			font-size: 14px
+
+			&:hover
+				text-decoration: underline
+				color: #fff
+
+	&__list
+		display: flex
+
+		&-item
+			flex-shrink: 0
+			width: 225px
+			padding: 5px 15px 0
+			font-size: 14px
+			color: #fff
+			font-family: $font-400
+			font-weight: 400
+			text-align: right
+			border-right: 2px solid $c-main
+
+			+media($lg)
+				width: calc(100% / 3)
+				text-align: center
+
+			&:last-child
+
+				+media($lg)
+					border: none
+
+	&__copyright
+		padding: 20px 0
+		text-align: center
+		background-color: #2f3336
+
+		&-text
+			display: inline-block
+			color: #fafafa
+			font-size: 15px
+			font-family: $font-400
+
+			a
+				display: inline-block
+				color: #fafafa
+				text-decoration: none
+
+				&:hover
+					text-decoration: underline
+
+	.container
+		height: auto !important
