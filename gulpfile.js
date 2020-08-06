@@ -1,5 +1,6 @@
 const gulp = require('gulp'),
 	options = require('./options.js'),
+	ftpOpts = require('./ftpOptions'),
 	webpackconfig = require('./webpack.config.js'),
 	plugins = require('gulp-load-plugins')();
 
@@ -38,7 +39,7 @@ gulp.task('modulePHPcopy', require('./gulp-tasks/modulePHPcopy')(gulp, options, 
 gulp.task('fonts', require('./gulp-tasks/fonts')(gulp, options, plugins));
 gulp.task('favicon', require('./gulp-tasks/favicon')(gulp, options, plugins));
 gulp.task('watch', require('./gulp-tasks/watch')(gulp, options, plugins));
-gulp.task('deploy', require('./gulp-tasks/deploy')(gulp, options, plugins));
+gulp.task('deploy', require('./gulp-tasks/deploy')(gulp, options, plugins, ftpOpts));
 
 
 gulp.task('default', gulp.series(
