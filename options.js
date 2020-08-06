@@ -1,5 +1,4 @@
 module.exports = {
-	name: 'lightbuilder',
 	path: {
 		build: {
 			html: './app/',
@@ -32,13 +31,6 @@ module.exports = {
 			svg: './src/**/*.svg',
 			images: './src/**/*.{png,jpg,jpeg,gif,ico,svg,webp}'
 		}
-	},
-
-	deploy: {
-		host:     '000.000.000.000',
-		user:     'user',
-		password: 'pass',
-		parallel: 10,
 	},
 
 	serverConfig: {
