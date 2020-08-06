@@ -70,20 +70,8 @@ html(lang='ru-RU')
 		// Виджет для перехода по всем страницам проекта
 		include ../blocks/pages-viget/pages-viget
 
-		//- async defer
-		// Либы, используемые на всех страницах
-		script(src="./js/vendors/jquery-3.4.1.min.js")
-		script(src="./js/vendors/svg4everybody.js" defer)
-		
-		// Вялая загрузка картинок
-		script(src="./js/vendors/lazyload.min.js" defer)
-
-		// Скролл эвенты
-		script(src="./js/vendors/noframework.waypoints.min.js" defer)
-
-		// Валидация
-		script(src="./js/vendors/bootstrapValidator.min.js" defer)
-		script(src="./js/vendors/jquery.inputmask.min.js" defer)
+		// Libs
+		script(src="./js/libs.min.js")
 
 		// Основные скрипты для всех страниц
-		script(src="./js/app.min.js" defer)
+		script(src="./js/app.min.js")
