@@ -1,0 +1,32 @@
+//- mixin lazy-picture(mod, src_source_arr, src, src_placeholder, mod_img)
+	//- ПРИМЕР
+		+lazy-picture('hero-slider-item__img-wrap', [
+			{data_srcset: 'images/hero-1.jpg', srcset: 'images/placeholder/hero-1.jpg', media: '480'},
+			{data_srcset: 'images/hero-1-mob.jpg', srcset: 'images/placeholder/hero-1-mob.jpg', media: '0'}],
+			'images/hero-1.jpg', 'images/placeholder/hero-1.jpg', 'hero-slider-item__img')
+	.lazy-img-wrap(class= mod)
+		picture
+			each src_source in src_source_arr
+				source(data-srcset= src_source.data_srcset, srcset= src_source.srcset, media='(min-width: ' + src_source.media + 'px)')
+			img.lazy-img(class= mod_img, data-src= src, src= src_placeholder,  alt='img')
+		span.preloader
+
+
+mixin lazy-picture(data)
+	//- ПРИМЕР
+		+lazy-picture({
+			mod: 'mode-class1',
+			src_source_arr: [
+				{data_srcset: 'images/z-slider-1_desktop.jpg', srcset: 'images/placeholder/z-slider-1_desktop.jpg', media: '768'},
+				{data_srcset: 'images/z-slider-1_mob.jpg', srcset: 'images/placeholder/z-slider-1_mob.jpg', media: '0'},
+			],
+			src: 'images/z-slider-1_desktop.jpg',
+			src_placeholder: 'images/placeholder/z-slider-1_desktop.jpg',
+			mod_img: 'mode-class2',
+		})
+	.lazy-img-wrap(class= data.mod)
+		picture
+			each src_source in data.src_source_arr
+				source(data-srcset= src_source.data_srcset, srcset= src_source.srcset, media='(min-width: ' + src_source.media + 'px)')
+			img.lazy-img(class= data.mod_img, data-src= data.src, src= data.src_placeholder,  alt='img')
+		//- span.preloader

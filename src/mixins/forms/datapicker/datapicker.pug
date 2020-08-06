@@ -1,0 +1,25 @@
+//- 
+
+mixin datapicker(type)
+
+	if type == 'single'
+
+		+b.datapicker.--single
+			+e.__field
+				+e.__icon
+					+icon('i_calendar')
+				input.form-control.js_datepicker(type="text")
+
+	//- if type == 'range'
+
+		+b.datapicker.--range
+
+			+e.__item
+				+e.__field
+					+icon('i_calendar', false, false, true)
+					input.input.input-date.js_datepicker--single(type="text")
+			
+			+e.__item
+				+e.__field
+					+icon('i_calendar', false, false, true)
+					input.input.input-date.js_datepicker--single(type="text")

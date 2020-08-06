@@ -1,0 +1,8 @@
+@mixin bg-rgba($hex, $opacity) {
+  background-color: $hex;
+  background-color: rgba($hex, $opacity);
+}
+
+@function bg_rgba($hex, $opacity) {
+  @return rgba($hex, $opacity);
+}

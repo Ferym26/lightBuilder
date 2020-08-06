@@ -1,0 +1,90 @@
+$slick-font-family: 'false'; //убирает подключение иконочных шрифтов слика
+$slick-font-path: "../fonts/slick/";
+$slick-loader-path: "../images/";
+
+@import "../../../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../../../node_modules/slick-carousel/slick/slick-theme.scss";
+
+.slick-list {
+	.slick-loading & {
+		background: #fff !important;
+	}
+}
+
+.slick-dots {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: -42px;
+
+	li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include sizeblock(12px);
+		margin: 0 2px;
+
+		button {
+			@include sizeblock(8px);
+			@include circle();
+			padding: 0;
+			background-color: $c-main;
+			@include transish;
+			transform: scale(0.5);
+			will-change: transform;
+
+			&:before {
+				display: none;
+			}
+		}
+
+		&.slick-active {
+
+			button {
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+.slick-arrow {
+	position: absolute;
+	@include sizeblock(35px);
+	@include hcenter;
+	background-color: #fff;
+	cursor: pointer;
+	z-index: 10;
+
+	&:hover {
+
+		.icon {
+			fill: $c-main
+		}
+	}
+
+	.icon {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include sizeblock(15px, 10px);
+		@include transish;
+		fill: $c-main;
+	}
+
+
+	&--prev {
+		left: -55px;
+
+		.icon {
+			transform: translate(-50%, -50%) rotate(-90deg)
+		}
+	}
+
+	&--next {
+		right: -55px;
+
+		.icon {
+			transform: translate(-50%, -50%) rotate(90deg)
+		}
+	}
+}

@@ -1,0 +1,39 @@
+@mixin hidden-up($breakpoint) {
+	@media screen and (min-width: $breakpoint) {
+		display: none !important;
+	}
+}
+
+@mixin hidden-down($breakpoint) {
+	@media screen and (max-width: $breakpoint) {
+		display: none !important;
+	}
+}
+
+@mixin media($breakpoint) {
+	@media screen and (max-width: $breakpoint - 1) {
+		@content;
+	}
+}
+
+@mixin mediaMin($breakpoint) {
+	@media screen and (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+@each $bp,
+$num in $grid-breakpoints {
+
+	@if $bp != 'xs' {
+		.hidden-#{$bp}-up {
+			@include hidden-up($num);
+		}
+	
+		.hidden-#{$bp}-down {
+			@include media($num) {
+				display: none !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,97 @@
+.pages-viget
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	transform: translate3d(-100%, 0, 0)
+	+transish
+	will-change: transform
+	z-index: 2000
+
+	&__menu
+		height: 100%
+		padding: 5px 10px
+		background-color: $c-main
+
+		&-list
+
+		&-item
+
+			&:not(:last-child)
+				margin-bottom: 5px
+
+		&-link
+			font-size: 13px
+			color: #fff
+
+			&:hover
+				color: $c-text
+
+			&:focus,
+			&:active
+				color: #fff
+
+	&__btn
+		position: absolute
+		top: 50px
+		right: -35px
+		width: 25px
+		height: 25px
+		cursor: pointer
+
+		&:after
+			+pseudo
+			+sizeblock(40px)
+			+circle
+			+center
+			+transish
+			background-color: $c-main
+			box-shadow: 0 2px 3px #777
+			z-index: 10
+
+		&:hover
+
+			&:after
+				box-shadow: 0 3px 7px #777
+
+			.icon
+				fill: #fff
+
+		.icon
+			position: relative
+			width: 18px
+			height: 18px
+			top: -3px
+			fill: #fff
+			+wcenter
+			+transish
+			z-index: 20
+
+	&.open
+		transform: translate(0, 0)
+
+
+	.media-pointer
+		position: absolute
+		bottom: 2px
+		+wcenter
+		z-index: 30
+		line-height: 1
+
+		&:after
+			content: "Full"
+			font-size: 14px
+			color: #fff
+			line-height: 1
+
+		// @include media($xl)
+		// 	&:after
+		// 		content: "XL"
+		
+		@include media($lg)
+			&:after
+				content: "LG"
+		
+		@include media($md)
+			&:after
+				content: "MD"

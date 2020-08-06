@@ -1,0 +1,32 @@
+//Options
+@import "./common/settings";
+
+//Mixins sass
+@import "./mixins/*.{scss,sass}";
+
+//Vendors
+@import "../vendors/vendors";
+
+//Bootstrap (only here)
+@import "./common/_bootstrap-opts";
+
+//content
+@import "./common/_typography.{scss,sass}";
+
+//Mixins styles
+@import "../../mixins/**/style.{scss,sass}";
+
+//Blocks styles
+@import "../../blocks/**/style.{scss,sass}";
+
+//Partials styles
+@import "../../partials/**/style.{scss,sass}";
+
+// fix IE11
+@import "./common/ie";
+
+// fix Safari
+@import "./common/ios";
+
+// no-js fix
+@import "./common/nojs-fix";

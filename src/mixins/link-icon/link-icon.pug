@@ -1,0 +1,20 @@
+//- type = link / text
+
+mixin link-icon(type, icon, text)
+
+	+b.link-icon
+
+		+e.__icon
+			+icon(icon)
+
+		if type === 'link'
+			+e('a').__link(href='#')= text
+
+		if type === 'phone'
+			+e('a').__link(href='tel:123123123')= text
+
+		if type === 'mail'
+			+e('a').__link(href='mailto:tutu@tu.com')= text
+		
+		if type === 'text'
+			+e.__link= text

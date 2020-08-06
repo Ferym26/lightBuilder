@@ -1,0 +1,19 @@
+-
+	var pages = [
+		{name: 'index', link: 'index'},
+		{name: '404', link: '404'},
+	]
+
+
+
++b.pages-viget
+
+	//- +e.__menu
+		+e('ul').__menu-list
+
+			each item in pages
+				+e('li').__menu-item
+					+e('a').__menu-link(href= './' + item.link + '.html')= item.name
+
+	+e.__btn
+		.media-pointer

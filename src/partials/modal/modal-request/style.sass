@@ -1,0 +1,75 @@
+.modal-request.modal
+
+	.modal-dialog
+		max-width: 800px
+		margin-top: 5vh
+
+		+media($md)
+			margin-top: 50px
+
+		+media(500px)
+			margin-top: 15px
+
+	.modal-body
+		max-width: 590px
+		margin: 0 auto
+
+		+media($md)
+			padding: 30px 15px
+
+		@media only screen and (max-height: 800px) and (min-width: 1024px)
+			padding: 25px 0
+
+	.modal-title
+		margin-bottom: 20px
+
+		+media($md)
+			text-align: center
+
+		+media(500px)
+			margin-bottom: 10px
+
+		&__text
+			font-size: 62px
+			font-weight: 700
+			line-height: 1
+
+			+media($lg)
+				font-size: 42px
+
+			+media($md)
+				font-size: 32px
+
+			+media(500px)
+				font-size: 26px
+
+			@media only screen and (max-height: 800px) and (min-width: 1024px)
+				font-size: 50px
+
+		&__descr
+			margin-top: 10px
+			line-height: 1
+			font-family: $font-600
+			font-size: 32px
+
+			+media($lg)
+				font-size: 26px
+
+			+media(500px)
+				font-size: 20px
+
+			@media only screen and (max-height: 800px) and (min-width: 1024px)
+				font-size: 26px
+
+	.btn
+		width: 100%
+		font-size: 20px
+
+		@media only screen and (max-height: 800px) and (min-width: 1024px)
+			height: 62px
+			line-height: 62px
+
+	.form-group
+
+		@media only screen and (max-height: 800px) and (min-width: 1024px)
+			margin-bottom: 18px

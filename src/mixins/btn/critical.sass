@@ -1,0 +1,75 @@
+.btn
+	$this: &
+
+	position: relative
+	display: inline-block
+	height: 72px
+	padding: 0 50px
+
+	font-family: $font-1
+	font-size: 20px
+	font-family: $font-600
+	line-height: 72px
+	border-radius: 2px
+	text-decoration: none
+	text-align: center
+	letter-spacing: -0.5px
+	color: #221F20
+	text-decoration: none !important
+	background-color: $c-main
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+	border: none
+	outline: none
+	cursor: pointer
+	user-select: none
+	white-space: nowrap
+	+transish
+
+	&:hover
+		background-color: #EBE200
+		
+	
+	&:active
+		background-color: #D6CE00
+
+	&:hover,
+	&:active,
+	&:focus
+		text-decoration: none !important
+
+	// Состояние отключеной кнопки
+	&[disabled]
+		background-color: #D5D6D8 !important
+		background-image: none !important
+		color: #B9BABE !important
+		cursor: default
+
+	// Обводка
+	&--outline
+		background-color: $trp
+		border: 1px solid #60a4a3
+		color: #fff
+		box-shadow: none
+		+font400
+
+		&:hover
+			color: $c-main
+			border-color: $c-main
+			background-color: $trp
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+		&:active
+			color: darken($c-main, 5%)
+			border-color: darken($c-main, 5%)
+			background-color: $trp
+
+		&[disabled]
+			border-color: $c-bg !important
+			background-color: #fff !important
+			color: $c-bg !important
+
+	&--sm
+		height: 48px
+		padding: 0 30px
+		line-height: 48px

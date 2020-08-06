@@ -1,0 +1,10 @@
+//- +lazy-img({
+//- 	pic: 'picname.jpg'
+//- })
+
+mixin lazy-img(data)
+	img.lazy-img(
+		class= data.mod
+		src= pixel
+		data-src= `images/${data.pic}`
+		alt='img')

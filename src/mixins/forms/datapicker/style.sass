@@ -1,0 +1,46 @@
+.datapicker
+
+	&:hover
+
+		.datapicker__icon
+			background-color: $c-main
+
+			.icon
+				fill: #fff
+
+	&__field
+		position: relative
+		z-index: 10
+
+	&__icon
+		position: absolute
+		+sizeblock(40px)
+		top: 1px
+		right: 1px
+		+hcenter
+		z-index: 10
+		cursor: pointer
+		+transish
+
+		&:hover
+			background-color: $c-main
+
+			.icon
+				fill: #fff
+
+		.icon
+			position: absolute
+			+center
+			+sizeblock(18px)
+			fill: $c-main
+			+transish
+
+.form-group
+	
+	&:hover
+
+		.datapicker
+
+			.form-control
+				border-color: #E7E7E7
+				cursor: pointer

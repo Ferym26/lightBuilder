@@ -1,0 +1,14 @@
+//- +lazy-bg-slider({
+//- 	pic: `image.png`,
+//- 	mod: 'prod-pic'
+//- })
+
+mixin lazy-bg-slider(data)
+	.lazy-bg-slider.swiper-lazy(
+		class= data.mod
+		style=`background-image: url("images/placeholder/${data.pic}")`
+		data-bg=`url(images/${data.pic})`
+		role="img" 
+		aria-label="Table flip" 
+		title="title"
+	)&attributes(attributes)

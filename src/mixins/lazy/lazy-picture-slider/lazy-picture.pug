@@ -1,0 +1,11 @@
+//- mixin lazy-picture-slider(mod, src_source_arr, src, src_placeholder, mod_img)
+mixin lazy-picture-slider(data)
+	//- ПРИМЕР
+		
+	
+	.lazy-img-wrap(class= data.mod)
+		picture
+			each src_source in data.src_source_arr
+				source(data-srcset= src_source.data_srcset, srcset= src_source.srcset, media='(min-width: ' + src_source.media + 'px)')
+			img.swiper-lazy(class= data.mod_img, data-src= data.src, src= data.src_placeholder, alt='img')
+		//- span.preloader

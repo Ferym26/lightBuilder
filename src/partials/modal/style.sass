@@ -1,0 +1,54 @@
+.modal
+
+	.modal-dialog
+		margin-top: 150px
+
+	.modal-content
+		border: none
+		border-radius: 0
+
+	.modal-header
+		border: none
+		border-radius: 0
+		padding: 0
+
+	.modal-body
+		padding: 30px 0 40px
+
+	.close-popup
+		position: absolute
+		right: 13px
+		top: 13px
+		width: 34px
+		height: 34px
+		background: 0 0
+		border: none
+		cursor: pointer
+		z-index: 10
+		transform: rotate(45deg)
+		+transish
+
+		&:after
+			content: ''
+			position: absolute
+			display: block
+			width: 30px
+			height: 2px
+			top: 16px
+			left: 2px
+			transform: rotate(0deg)
+			background-color: #929292
+
+		&:before
+			content: ''
+			position: absolute
+			display: block
+			width: 30px
+			height: 2px
+			top: 16px
+			left: 2px
+			transform: rotate(90deg)
+			background-color: #929292
+
+		&:hover
+			transform: rotate(225deg)

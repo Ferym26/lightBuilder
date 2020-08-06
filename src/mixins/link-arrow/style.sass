@@ -1,0 +1,21 @@
+.link-arrow
+	position: relative
+	display: inline-block
+	padding-right: 32px
+	color: $c-main
+	font-size: 14px
+
+	&:hover
+
+		.icon
+			transform: translate(5px, 0)
+
+	.icon
+		position: absolute
+		right: 0
+		top: 10px
+		width: 21px
+		height: 6px
+		fill: $c-main
+		+transish
+		will-change: transform

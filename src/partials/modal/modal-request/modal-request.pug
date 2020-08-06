@@ -1,0 +1,69 @@
+.modal-request.modal.fade#modalRequest
+	.modal-dialog
+		.modal-content
+			
+			.modal-header
+				.close-popup(data-dismiss="modal" aria-hidden="true")
+			
+			.modal-body
+				.modal-title
+					.modal-title__text Оставьте заявку
+					.modal-title__descr и получите индивидуальную консультацию
+
+				.modal-field
+					form.bv-form#formSendRequest(enctype='multipart/form-data', method='POST', action="javascript:void(null);", autocomplete='on', novalidate='novalidate')
+						.form-group
+							label.field-label(for='fieldNameModal') Ваше имя
+							input.form-control#fieldNameModal(
+									type='text',
+									name='fieldNameModal',
+									data-bv-field='fieldNameModal',
+									data-bv-message='Укажите Ваше имя',
+									required
+								)
+						.form-group
+							label.field-label(for='fieldPhoneModal') Ваш телефон
+							input#fieldPhoneModal.form-control(
+								type='tel',
+								val='+375'
+								name='fieldPhoneModal',
+								placeholder='+375'
+								data-inputmask-mask='+375 (99) 999-99-99',
+								data-bv-message='Укажите ваш телефон',
+								required
+							)
+						//- .form-group
+							label.field-label(for='fieldMailModal') Электронная почта
+							input#fieldMailModal.form-control(
+								type='email',
+								name='fieldMailModal',
+								data-bv-field='fieldMailModal',
+								data-bv-message='Укажите электронную почту',
+								data-bv-emailaddress-message='Электронная почта введена некорректно',
+								required
+							)
+						//- .form-group
+							label.field-label(for='fieldYNPModal') УНП
+							input.form-control.js_inputYNP#fieldYNPModal(
+									type='text',
+									name='fieldYNPModal',
+									data-bv-field='fieldYNPModal',
+									data-bv-message='Укажите УНП',
+									data-inputmask-mask='999 999 999',
+									required
+								)
+
+						.form-group
+							.checkbox
+								input(
+									type='checkbox',
+									id="fieldAcceptModal",
+									name='fieldAcceptModal',
+									checked,
+									value='Да',
+									data-bv-message='Необходимо дать согласие',
+									data-bv-field='fieldAcceptModal'
+								)
+								label(for="fieldAcceptModal") Я соглашаюсь с тем, что «Приорбанк» ОАО имеет право на хранение и обработку, в том числе автоматизированную (включая сбор, накопление, хранение, использование), любой информации, относящейся к моим персональным данным, а также на рассылку информационных сообщений.
+
+						button.btn#btnReMmodalOrder(type='submit') Заказать звонок

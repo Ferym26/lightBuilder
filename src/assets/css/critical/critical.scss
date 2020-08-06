@@ -1,0 +1,16 @@
+@import "../common/settings";
+@import "../mixins/*.{scss,sass}";
+
+@import '../common/reset';
+@import "../common/fonts";
+
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+@import "../../../../node_modules/bootstrap/scss/grid";
+
+@import "../common/main";
+
+@import '../../../partials/**/critical.{scss,sass}';
+@import '../../../blocks/**/critical.{scss,sass}';
+@import '../../../mixins/**/critical.{scss,sass}';

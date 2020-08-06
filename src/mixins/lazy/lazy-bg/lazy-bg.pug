@@ -1,0 +1,14 @@
+//- +lazy-bg({
+//- 	pic: 'image.jpg',
+//- 	mod: 'prod-pic'
+//- })
+
+mixin lazy-bg(data)
+	.lazy-bg(
+		class= data.mod
+		style=`background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==")`
+		data-bg=`url(images/${data.pic})`
+		role="img" 
+		aria-label="Table flip" 
+		title="title"
+	)&attributes(attributes)

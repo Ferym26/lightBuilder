@@ -1,0 +1,12 @@
+//- +lazy-img-slider({
+//- 	pic: item,
+//- 	mod: 'prod-pic',
+//- })
+
+mixin lazy-img-slider(data)
+	img.swiper-lazy(
+		class= data.mod
+		src= pixel
+		data-src=`images/${data.pic}` 
+		alt='img'
+	)

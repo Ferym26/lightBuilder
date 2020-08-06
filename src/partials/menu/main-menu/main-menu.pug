@@ -1,0 +1,45 @@
+-
+	var mainMenu = [
+		{
+			label: 'home',
+			title: 'Home',
+		},
+		{
+			label: 'ourMission',
+			title: 'Our Mission',
+		},
+		{
+			label: 'whatWeDo',
+			title: 'What We Do',
+		},
+		{
+			label: 'ourValues',
+			title: 'Our Values',
+		},
+		{
+			label: 'ourHistory',
+			title: 'Our History',
+		},
+		{
+			label: 'supportUs',
+			title: 'Support Us',
+		},
+		{
+			label: 'gallery',
+			title: 'Gallery',
+		},
+		//- {
+		//- 	label: 'governance',
+		//- 	title: 'Governance',
+		//- },
+		//- {
+		//- 	label: 'volunteers',
+		//- 	title: 'Volunteers',
+		//- },
+	]
+
++b('ul').main-menu
+
+	each item, i in mainMenu
+		+e('li').__item(data-menuanchor=item.label class= i==0 ? 'active' : false)
+			+e('a').__link(href=`#${item.label}`)= item.title

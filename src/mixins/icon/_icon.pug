@@ -1,0 +1,13 @@
+//- mixin icon(name, file, mod)
+//- 	- mod = mod || ''
+//- 	+e('svg')(class="icon i " + name + ' ' + mod)&attributes(attributes)
+//- 		if !file
+//- 			use(xlink:href="./images/sprite.svg#" + name)
+//- 		else
+//- 			use(xlink:href=`./images/sprite.svg#${iconName}`)
+
+
+mixin icon(imgName, mod)
+
+	svg.icon(class= mod ? mod : false)
+		use(xlink:href="./images/sprite.svg#" + imgName)

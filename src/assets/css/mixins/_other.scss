@@ -1,0 +1,136 @@
+// Simple pseudoelement
+@mixin pseudo {
+	content: '';
+	position: absolute;
+	display: block;
+}
+
+//vertical center
+@mixin center	{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+//horizontal center
+@mixin wcenter {
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+//horizontal center
+@mixin hcenter {
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+// Обрезание текста с 3 точиями
+@mixin text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+// Круг
+@mixin circle {
+	border-radius: 50%;
+}
+
+//Размер
+@mixin sizeblock($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+// Default transition
+@mixin transish($time: 0.3s) {
+	transition: all $time ease;
+}
+
+@mixin maxHeight($num) {
+	max-height: $num;
+	overflow: hidden;
+}
+
+@mixin mainGrad($side) {
+	@if $side == 'r' {
+		background: linear-gradient(to left, #4b66db 0%, #3e48b7 100%); // $c-main
+	}
+	@if $side == 'l' {
+		background: linear-gradient(to left, #3e48b7 0%, #4b66db 100%); // $c-main
+	}
+	@if $side == 't' {
+		background: linear-gradient(to top, #4b66db 0%, #3e48b7 100%); // $c-main
+	}
+	@if $side == 'b' {
+		background: linear-gradient(to bottom, #3e48b7 0%, #4b66db 100%); // $c-main
+	}
+}
+
+//triangle
+@mixin arr($width, $height, $bg, $direction) {
+
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+
+	@if $direction == t {
+		border-width: 0 $width / 2 + px $height + px $width / 2 + px;
+		border-color: transparent transparent $bg transparent;
+	}
+
+	@if $direction == r {
+		border-width: $height / 2 + px 0 $height / 2 + px $width + px;
+		border-color: transparent transparent transparent $bg;
+	}
+
+	@if $direction == b {
+		border-width: $height + px $width / 2 + px 0 $width / 2 + px;
+		border-color: $bg transparent transparent transparent;
+	}
+
+	@if $direction == l {
+		border-width: $height / 2 + px $width + px $height / 2 + px 0;
+		border-color: transparent $bg transparent transparent;		
+	}
+
+	@if $direction == tl {
+		border-width: $height + px $width + px 0 0;
+		border-color: $bg transparent transparent transparent;
+	}
+
+	@if $direction == tr {
+		border-width: 0 $width + px $height + px 0;
+		border-color: transparent $bg transparent transparent;
+	}
+
+	@if $direction == br {
+		border-width: 0 0 $height + px $width + px;
+		border-color: transparent transparent $bg transparent;
+	}
+
+	@if $direction == bl {
+		border-width: $height + px 0 0 $width + px;
+		border-color: transparent transparent transparent $bg;
+	}
+
+}
+
+%trbl {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+@mixin font600 {
+	font-family: $font-600;
+}
+
+@mixin font400 {
+	font-family: $font-400;
+}
+
+@mixin font300 {
+	font-family: $font-300;
+}

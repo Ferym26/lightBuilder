@@ -1,0 +1,41 @@
+.modal-callback.modal
+
+	.modal-dialog
+		max-width: 700px
+		margin-top: 5vh
+
+		+media($md)
+			margin-top: 50px
+
+	.modal-body
+		position: relative
+		max-width: 600px
+		width: 100%
+		margin: 0 auto
+		padding-top: 70px
+
+		+media($md)
+			padding: 50px 15px 20px
+
+	.modal-title
+		margin-bottom: 20px
+
+		+media($md)
+			text-align: center
+
+		&__text
+			font-size: 42px
+			font-weight: 700
+			line-height: 1
+
+			+media($md)
+				font-size: 32px
+
+		&__descr
+			margin-top: 20px
+			line-height: 1
+			font-family: $font-600
+			font-size: 26px
+
+			+media($lg)
+				font-size: 26px

@@ -1,0 +1,29 @@
+.main-menu
+	$this: &
+
+	&__item
+		
+		&:not(:last-child)
+			margin-bottom: 30px
+
+		&.active
+
+			#{$this}__link
+				transform: scale(2)
+				color: $c-main
+
+	&__link
+		position: relative
+		display: block
+		font-size: 18px
+		font-weight: 500
+		letter-spacing: 0.02em
+		color: $c-main
+		text-decoration: none
+		transform-origin: 0 50%
+		+transish
+
+		&:hover
+			text-decoration: none
+			color: #588BD8
+			transform: scale(1.5)

@@ -1,0 +1,102 @@
+.radio {
+	display: block;
+	margin-right: 30px;
+
+	&:hover label:before {
+		border-color: $c-main;
+	}
+
+	&.disabled {
+		pointer-events: none;
+
+		label {
+			color: $c-bg;
+
+			&:after {
+				opacity: 1;
+				background: $c-bg;
+				transform: none;
+				border: none;
+			}
+
+			&:before {
+				border-color: $c-bg !important;
+			}
+		}
+	}
+
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+		overflow: hidden;
+
+		&:checked+label:after {
+			opacity: 1;
+		}
+
+		&:checked+label:before {
+			border-color: $c-main;
+		}
+
+		&:disabled+label:after,
+		&.disabled+label:after {
+			opacity: 1;
+			background: $c-bg;
+			border-color: $c-bg;
+			transform: none;
+			border: none;
+		}
+
+		&:disabled+label:before,
+		&.disabled+label:before {
+			border-color: $c-bg !important;
+		}
+
+	}
+
+	label {
+		position: relative;
+		display: inline-block;
+		padding-left: 32px;
+		font-size: 12px;
+		line-height: 1.6;
+		cursor: pointer;
+		@include transish;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 2px;
+			width: 16px;
+			height: 16px;
+			border: 2px solid #ededed;
+			background: #fff;
+			border-radius: 50%;
+			@include transish;
+			box-sizing: border-box;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 8px;
+			height: 8px;
+			left: 4px;
+			top: 6px;
+			background: $c-main;
+			border-radius: 50%;
+			transition: .5s;
+			opacity: 0;
+		}
+	}
+
+	&.radio-inline {
+		display: inline-block;
+		margin-right: 20px;
+	}
+
+}

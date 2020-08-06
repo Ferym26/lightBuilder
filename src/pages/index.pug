@@ -1,0 +1,21 @@
+extends ../layout/layout
+
+block vars
+	- var bodyClass = ''
+	- var footerClass = ''
+	- var headerClass = ''
+	- var pageTitle = 'index'
+	- var dir = './'
+	- var layout = ''
+
+
+block main
+	.container
+		.row
+			.col-12
+				include ../blocks/block/block
+
+block popups
+	include ../partials/modal/modal-request/modal-request
+	include ../partials/modal/modal-callback/modal-callback
+	include ../partials/modal/modal-error/modal-error

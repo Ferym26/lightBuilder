@@ -1,0 +1,26 @@
+.link-icon
+	position: relative
+
+	&:hover
+
+		.link-icon__icon
+
+			.icon
+				fill: #828aa7
+
+	&__icon
+		position: absolute
+		top: 4px
+		left: 0
+
+		.icon
+			display: block
+			+sizeblock(17px)
+			fill: #99a3c5
+			+transish
+
+	&__link
+		display: block
+		padding-left: 32px
+		font-size: 14px
+		color: $c-text
