@@ -2,5 +2,8 @@
 	.container
 		.row
 			.col-12
-				p header
+				+e.__logo
+					picture
+						source(srcset='images/logo-mob.svg' media='(max-width: 1023px)')
+						img(src="images/logo.svg", alt="logo")
 

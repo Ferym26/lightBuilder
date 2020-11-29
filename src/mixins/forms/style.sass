@@ -13,6 +13,16 @@
 			color: $c-text
 			border-color: red
 
+	&.focus-in
+
+		.field-label
+			top: -6px
+			left: 27px
+			background-color: #fff
+
+		.form-control
+			background-color: #fff
+
 	.form-control-feedback
 		display: none !important
 
@@ -58,6 +68,14 @@
 	color: $c-text
 	+transish()
 	font-family: $font-400
+
+	&--fly
+		position: absolute
+		top: 16px
+		left: 15px
+		padding: 0 5px
+		background-color: $trp
+		z-index: 10
 
 .help-block
 	position: absolute

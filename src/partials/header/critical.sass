@@ -1,3 +1,16 @@
 .header
-	background-color: green
-	color: #fff
+	padding: 30px 0 0
+
+	&__logo
+
+		+media($lg)
+			display: flex
+			justify-content: center
+
+		img
+
+			+media($lg)
+				max-width: 350px
+
+			+media($md)
+				max-width: 220px

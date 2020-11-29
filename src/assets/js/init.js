@@ -1,3 +1,5 @@
+// import 'gsap';
+
 const uiInits = {
 
 	init: function() {
@@ -9,9 +11,12 @@ const uiInits = {
 		if (window.matchMedia("(min-width: 1250px)").matches) {
 			// this.animations();
 		}
-
+		if (window.matchMedia("(max-width: 1249px)").matches) {
+			//
+		}
 		// this.scrollTo();
 		// this.showModalTimer();
+		this.flyLabels();
 	},
 
 	svgPolifill: function() {
@@ -59,7 +64,6 @@ const uiInits = {
 	},
 
 	validation: function () {
-
 		$('.bv-form').bootstrapValidator({
 			feedbackIcons: {
 				valid: 'bv-icon-ok',
@@ -67,54 +71,57 @@ const uiInits = {
 				validating: 'bv-icon-refresh'
 			},
 		})
-		.on('success.form.bv', function(e) {
-			const msg = $('#formSendRequest').serialize();
-	
+		.on('success.form.bv', function (e) {
+			const form = $(e.target);
+			const msg = form.serialize();
 			$.ajax({
-				type	: 'POST',
-				url		: 'module/moduleForm.php',
-				data	: msg,
-				success: function(data) {	
+				type: 'POST',
+				url: 'module/moduleForm.php',
+				data: msg,
+				success: function (data) {
 					console.log('success', data);
 					$('#modalRequest').modal('hide');
-					if(data == "success"){
-						$("#fieldNameModal").val("");
-						$("#fieldPhoneModal").val("");
+					if (data == "success") {
+						form.find('input').val("");
 						$('#modalCallback').modal('show');
-					}else{
+					} else {
 						$('#modalError').modal('show');
 					}
-					setTimeout(function() {
+					setTimeout(function () {
 						$('#modalCallback').modal('hide');
 						$('#modalError').modal('hide');
-					}, 2000);
+					}, 3000);
 				},
-				error: function(xhr, str){
+				error: function (xhr, str) {
 					console.log('error', msg);
 					$('#modalRequest').modal('hide');
 					$('#modalError').modal('show');
-					setTimeout(function() {
+					setTimeout(function () {
 						$('#modalError').modal('hide');
-					}, 2000);
+					}, 3000);
 				}
 			});
 		});
 
 		$('input[type="tel"]').inputmask({
+			showMaskOnHover: false,
 			oncomplete: function () {
-				const $form = $(this).closest('.bv-form');
-				$form.data('bootstrapValidator').updateStatus($(this).attr('name'), 'VALID', null);
+				const $this = $(this);
+				const $form = $this.closest('.bv-form');
+				$form.data('bootstrapValidator').updateStatus($this.attr('name'), 'VALID', null);
 			},
 			onincomplete: function () {
 				const $this = $(this);
-				const $form = $(this).closest('.bv-form');
+				const $form = $this.closest('.bv-form');
 				setTimeout(function () {
 					$form.data('bootstrapValidator').updateStatus($this.attr('name'), 'INVALID', null);
 				}, 0)
 			},
 		});
 
-		$('.js_inputYNP').inputmask();
+		$('.js_inputYNP').inputmask({
+			showMaskOnHover: false,
+		});
 	},
 
 	noizPicLoad: function() {
@@ -205,18 +212,39 @@ const uiInits = {
 	},
 
 	showModalTimer() {
-		var t;
-		window.onload = resetTimer;
-		// DOM Events
-		document.onmousemove = resetTimer;
-		document.onkeypress = resetTimer;
-	
+		const t = null;
+		window.addEventListener('load', resetTimer);
+		document.addEventListener('onmousemove', resetTimer);
+		document.addEventListener('onmousemove', resetTimer);
+
 		function resetTimer() {
 			clearTimeout(t);
 			t = setTimeout(function() {
 				$('#modalRequest').modal('show');
 			}, 30000)
 		}
+	},
+
+	flyLabels() {
+		var inputWrappers = $('.form-group');
+		inputWrappers.each(function () {
+			var wrap = $(this);
+			var input = wrap.find('.form-control');
+
+			if (input.val() !== '') {
+				wrap.addClass('focus-in');
+			}
+
+			input.off('focus.initInputs').on('focus.initInputs', function () {
+				wrap.addClass('focus-in');
+			});
+
+			input.off('blur.initInputs').on('blur.initInputs', function () {
+				if (input.val() === '') {
+					wrap.removeClass('focus-in');
+				}
+			});
+		});
 	},
 }
 

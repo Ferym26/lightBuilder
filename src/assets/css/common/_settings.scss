@@ -1,5 +1,5 @@
-// Grid
-$lg: 1280px;
+// Grid breakpoints
+$lg: 1250px;
 $md: 768px;
 
 $gutter: 30px;
@@ -18,14 +18,14 @@ $container-max-widths: (
 );
 
 // Fonts types
-$c-size: 24px;
-$font-1: 'FuturaDemiC';
-$font-600: 'FuturaMediumC';
-$font-400: 'FuturaBookC';
+$c-size: 16px;
 $font-300: 'FuturaLightC';
+$font-400: 'FuturaBookC';
+$font-600: 'FuturaMediumC';
+$font-700: 'FuturaBold';
 
 // Colors
-$c-main:		red;
+$c-main:		#ffec00;
 $c-bg:			#F5F6F8;
 $c-text:		#01030F;
 $trp:			transparent;

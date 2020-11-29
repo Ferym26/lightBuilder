@@ -1,0 +1,80 @@
++b.request
+	.container
+		+e.__inner
+
+			+b.request-form
+
+				+section-title({
+					text: 'Блок с формой',
+					descr: 'Описания блока с формой',
+				})
+
+				+e.__form
+					form.bv-form(enctype='multipart/form-data', method='POST', action="javascript:void(null);", autocomplete='on', novalidate='novalidate')
+						.row
+							.col-lg-4.col-md-6
+								.form-group
+									label.field-label.field-label--fly(for='fieldName') Ваше имя
+									input.form-control#fieldName(
+											type='text',
+											name='fieldName',
+											data-bv-field='fieldName',
+											data-bv-message='Укажите Ваше имя',
+											required
+										)
+							.col-lg-4.col-md-6
+								.form-group
+									label.field-label.field-label--fly(for='fieldPhone') Ваш телефон
+									input#fieldPhone.form-control(
+										type='tel',
+										name='fieldPhone',
+										data-inputmask-mask='+375 (99) 999-99-99',
+										data-bv-message='Укажите ваш телефон',
+										required
+									)
+							.col-lg-6
+								.form-group
+									label.field-label(for='fieldMail1') Электронная почта
+									input#fieldMail1.form-control(
+										type='email',
+										name='fieldMail',
+										data-bv-field='fieldMail1',
+										data-bv-message='Укажите электронную почту',
+										data-bv-emailaddress-message='Электронная почта введена некорректно',
+									)
+							.col-lg-6
+								.form-group
+									label.field-label(for='fieldCompany1') Название компании
+									input#fieldCompany1.form-control(
+											type='text',
+											name='fieldCompany',
+										)
+							.col-lg-12
+								.form-group
+									label.field-label(for='fieldYNP') УНП
+									input.form-control.js_inputYNP#fieldYNP(
+											type='text',
+											name='fieldYNP',
+											data-bv-field='fieldYNP',
+											data-bv-message='Укажите УНП',
+											data-inputmask-mask='999 999 999',
+										)
+							.col-lg-4.col-md-12
+								button.btn#btn-request-form(type='submit') Отправить заявку
+
+						+e.__rools
+
+							.form-group
+								.checkbox
+									input(
+										type='checkbox',
+										id="fieldAccept2",
+										name='fieldAccept',
+										checked,
+										value='Да',
+										data-bv-message='Необходимо дать согласие',
+										data-bv-field='fieldAccept'
+										required
+									)
+									label(for="fieldAccept2") Я соглашаюсь с тем, что "Приорбанк" ОАО имеет право на хранение, обработку, в том числе автоматизированную (включая сбор, накопление, хранение, использование) и передачу партнерам, задействованным в предоставлении данной услуги, любой информации, относящейся к моим персональным данным, а также на рассылку информационных сообщений.
+

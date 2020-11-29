@@ -1,10 +1,10 @@
 .modal-request.modal.fade#modalRequest
 	.modal-dialog
 		.modal-content
-			
+
 			.modal-header
 				.close-popup(data-dismiss="modal" aria-hidden="true")
-			
+
 			.modal-body
 				.modal-title
 					.modal-title__text Оставьте заявку
@@ -58,12 +58,13 @@
 								input(
 									type='checkbox',
 									id="fieldAcceptModal",
-									name='fieldAcceptModal',
+									name='fieldAccept',
 									checked,
 									value='Да',
 									data-bv-message='Необходимо дать согласие',
-									data-bv-field='fieldAcceptModal'
+									data-bv-field='fieldAccept'
+									required
 								)
-								label(for="fieldAcceptModal") Я соглашаюсь с тем, что «Приорбанк» ОАО имеет право на хранение и обработку, в том числе автоматизированную (включая сбор, накопление, хранение, использование), любой информации, относящейся к моим персональным данным, а также на рассылку информационных сообщений.
+								label(for="fieldAcceptModal") Я соглашаюсь с тем, что "Приорбанк" ОАО имеет право на хранение, обработку, в том числе автоматизированную (включая сбор, накопление, хранение, использование) и передачу партнерам, задействованным в предоставлении данной услуги, любой информации, относящейся к моим персональным данным, а также на рассылку информационных сообщений.
 
 						button.btn#btnReMmodalOrder(type='submit') Заказать звонок

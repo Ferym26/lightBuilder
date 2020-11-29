@@ -1,7 +1,7 @@
 {
-	"name": "lightbuilder",
+	"name": "priorLandsTemplate",
 	"version": "1.0.0",
-	"description": "lightBuilder",
+	"description": "priorLandsTemplate",
 	"main": "gulpfile.js",
 	"repository": {
 		"type": "git",
