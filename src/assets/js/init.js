@@ -17,6 +17,7 @@ const uiInits = {
 		// this.scrollTo();
 		// this.showModalTimer();
 		this.flyLabels();
+		this.slider();
 	},
 
 	svgPolifill: function() {
@@ -243,6 +244,44 @@ const uiInits = {
 				if (input.val() === '') {
 					wrap.removeClass('focus-in');
 				}
+			});
+		});
+	},
+
+	slider() {
+		const _this = this;
+		$('.js_slider').each(function (i, el) {
+			const $slideWrap = $(el);
+			const slider = $slideWrap.find('.js-swiper-slider');
+			const sliderPrev = $slideWrap.find('.js-swiper-button-prev');
+			const sliderNext = $slideWrap.find('.js-swiper-button-next');
+			const sliderPagination = $slideWrap.find('.js-swiper-pagination');
+
+			const swiper = new Swiper(slider, {
+				autoHeight: false,
+				lazy: true,
+				lazyInit: 500,
+				loop: false,
+				slidesPerView: 1,
+				spaceBetween: 0,
+				watchOverflow: true,
+				// autoplay: {
+				// 	delay: 5000,
+				// },
+				navigation: {
+					nextEl: sliderNext,
+					prevEl: sliderPrev,
+				},
+				breakpoints: {
+					// 768: {
+
+					// },
+				},
+				on: {
+					init() {
+						console.log(123);
+					},
+				},
 			});
 		});
 	},

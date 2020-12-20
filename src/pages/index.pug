@@ -15,6 +15,18 @@ block main
 			.col-12
 				include ../blocks/block/block
 				include ../blocks/request/request
+				+slider({
+					mainClass: 'js_slider',
+					buttons: true,
+					pagination: true,
+				})
+					.swiper-slide
+						+lazy-img-slider({pic: 'card1.png'})
+					.swiper-slide
+						+lazy-img-slider({pic: 'card1.png'})
+					.swiper-slide
+						+lazy-img-slider({pic: 'card1.png'})
+
 
 block popups
 	include ../partials/modal/modal-request/modal-request
