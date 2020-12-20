@@ -43,6 +43,7 @@ module.exports = {
 		reloadDelay: 100,
 		timestamps: false,
 		notify: false,
+		online: true,
 		// logPrefix: 'frontend'
 		// tunnel: true,
 		// tunnel: "slamlight"

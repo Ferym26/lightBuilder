@@ -1,0 +1,21 @@
+//- +slider({
+//- 	mainClass: 'js_slider',
+//- 	buttons: true,
+//- 	pagination: true,
+//- })
+
+mixin slider(data)
+
+	.swiper.swiper-slider(class=data.mainClass)
+		.swiper-container.js-swiper-slider
+			.swiper-wrapper
+				block
+		
+		if data.buttons
+			button.swiper-button.swiper-button-prev.js-swiper-button-prev(type='button', aria-label='Предыдущий слайд')
+				+icon('i-slider-arrow')
+			button.swiper-button.swiper-button-next.js-swiper-button-next(type='button', aria-label='Следующий слайд')
+				+icon('i-slider-arrow')
+
+		if data.pagination
+			.swiper-pagination.js-swiper-pagination.not-init

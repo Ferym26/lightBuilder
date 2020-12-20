@@ -1,0 +1,93 @@
+@import './swiper';
+
+.swiper-slider {
+	position: relative;
+}
+
+.swiper-container {
+	width: 100%;
+}
+
+.swiper-button {
+	background-color: $trp;
+	transition: background-color 0.3s ease-in-out, opacity 0.3s ease;
+
+	body.no-js & {
+		display: none
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+
+		.icon {
+			fill: $c-main;
+		}
+	}
+
+	.icon {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include sizeblock(10px, 18px);
+		@include transish;
+		fill: $c-sec;
+	}
+
+	&-prev {
+
+		.icon {
+			transform: translate(-50%, -50%)
+		}
+	}
+
+	&-next {
+
+		.icon {
+			transform: translate(-50%, -50%) rotate(180deg)
+		}
+	}
+}
+
+.swiper-pagination {
+	bottom: -45px;
+
+	body.no-js & {
+		display: none
+	}
+
+	&-bullet {
+		margin: 0 4px;
+		transform: scale(0.5);
+		background-color: $c-sec;
+		opacity: 1;
+		@include transish;
+		will-change: width, margin, opacity;
+
+		&:first-child:last-child {
+			display: none;
+		}
+
+		&-active {
+			width: 8px !important;
+			opacity: 1 !important;
+			visibility: visible !important;
+			margin: 0 4px !important;
+			transform: scale(1);
+		}
+
+		&.hidden-dot {
+			width: 0;
+			opacity: 0;
+			visibility: hidden;
+			margin: 0;
+		}
+	}
+
+	&.not-init {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
