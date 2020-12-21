@@ -1,2 +1,2 @@
-# PriorLandsTemplate
-## Простой сборщик лендов для Приора
+# LandsTemplate
+## Простой сборщик
