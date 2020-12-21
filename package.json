@@ -1,18 +1,22 @@
 {
-	"name": "priorLandsTemplate",
+	"name": "lightBuilder",
 	"version": "1.0.0",
-	"description": "priorLandsTemplate",
+	"description": "lightBuilder",
 	"main": "gulpfile.js",
 	"repository": {
 		"type": "git",
-		"url": "https://gitlab.com/"
+		"url": "https://github.com/Ferym26/lightBuilder"
 	},
 	"author": "ferym26@gmail.com",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://gitlab.com/"
+		"url": "https://github.com/Ferym26/lightBuilder/issues"
 	},
 	"homepage": "https://gitlab.com/",
+	"scripts": {
+		"dev": "gulp",
+		"deploy": "gulp deploy"
+	},
 	"devDependencies": {
 		"@babel/cli": "^7.5.5",
 		"@babel/core": "^7.5.5",
@@ -81,7 +85,6 @@
 	],
 	"dependencies": {
 		"bootstrap": "^4.3.1",
-		"gsap": "^3.2.6",
-		"jquery": "^3.4.1"
+		"gsap": "^3.2.6"
 	}
 }

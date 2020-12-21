@@ -1,0 +1,69 @@
+@import "./fullpage.min.scss";
+
+#fp-nav {
+
+	ul {
+
+		li {
+			width: 16px;
+			height: 16px;
+			margin: 5px;
+
+			a {
+
+				span {
+					width: 8px;
+					height: 8px;
+					margin: -4px 0 0 -4px;
+					border: 2px solid #fff;
+					background-color: $c-text2;
+				}
+
+				&.active {
+
+					span {
+						width: 16px;
+						height: 16px;
+						margin: -8px 0 0 -8px;
+					}
+				}
+			}
+
+			.fp-tooltip {
+				width: auto;
+				max-width: 250px;
+				top: -3px;
+				padding: 0 10px;
+				font-family: $f-main;
+				color: $c-text;
+				font-weight: 700;
+				background-color: #fff;
+				border-radius: 3px;
+				pointer-events: none;
+			}
+		}
+	}
+}
+
+.fp-controlArrow {
+
+	&:after {
+		@include pseudo;
+		width: 100%;
+		height: 100%;
+		@extend %trbl;
+		background: url('../images/i-slider-arrow-hover.svg') no-repeat 50% 50%;
+		background-size: cover;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+		z-index: 10;
+	}
+
+	&:hover {
+
+		&:after {
+			opacity: 1;
+		}
+	}
+}
+
