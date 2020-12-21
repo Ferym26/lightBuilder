@@ -4,11 +4,12 @@
 @import '../common/reset';
 @import "../common/fonts";
 
-@import "../../../../node_modules/bootstrap/scss/functions";
-@import "../../../../node_modules/bootstrap/scss/variables";
-@import "../../../../node_modules/bootstrap/scss/mixins";
-@import "../../../../node_modules/bootstrap/scss/grid";
-@import "../../../../node_modules/bootstrap/scss/transitions";
+// @import "../../../../node_modules/bootstrap/scss/functions";
+// @import "../../../../node_modules/bootstrap/scss/variables";
+// @import "../../../../node_modules/bootstrap/scss/mixins";
+// @import "../../../../node_modules/bootstrap/scss/grid";
+// @import "../../../../node_modules/bootstrap/scss/transitions";
+@import "../common/_grid";
 
 
 @import "../common/main";

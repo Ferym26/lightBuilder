@@ -21,9 +21,9 @@ module.exports = function (gulp, options, plugins) {
 				optipng: ['-i 1', '-strip all', '-fix', '-o7', '-force'],
 				pngquant: ['--speed=1', '--force', 256],
 				zopflipng: ['-y', '--lossy_8bit', '--lossy_transparent'],
-				jpegRecompress: ['--strip', '--quality', 'medium', '--min', 80, '--max', 95],
+				jpegRecompress: ['--strip', '--quality', 'medium', '--min', 90, '--max', 95],
 				mozjpeg: ['-optimize', '-progressive', '-quality', 90],
-				guetzli: ['--quality', 90],
+				// guetzli: ['--quality', 90],
 				gifsicle: ['--optimize'],
 				svgo: ['--enable', 'cleanupIDs', '--disable', 'convertColors']
 			}))
@@ -59,47 +59,47 @@ module.exports = function (gulp, options, plugins) {
 			}))
 			.pipe(plugins.newer(options.path.build.images))
 			.pipe(gulp.dest(options.path.build.images));
-		
-		// кодирует в webp
+
+		// кодирует PNG, JPG в webp
 		gulp.src([
-			'./src/blocks/**/*.{png}',
-			'./src/components/**/*.{png}',
-			'./src/partials/**/*.{png}',
-			'./src/mixins/**/*.{png}',
-			'./src/assets/images/**/*.{png}'
+			'./src/blocks/**/*.{png,jpg}',
+			'./src/components/**/*.{png,jpg}',
+			'./src/partials/**/*.{png,jpg}',
+			'./src/mixins/**/*.{png,jpg}',
+			'./src/assets/images/**/*.{png,jpg}'
 		])
 			.pipe(plugins.newer(options.path.build.images))
 			.pipe(plugins.webp({
 				quality: 75,
 				method: 6,
 			}))
-			.pipe(plugins.rename({
-				suffix: '.png'
-			}))
+			// .pipe(plugins.rename({
+			// 	suffix: '.png'
+			// }))
 			.pipe(plugins.flatten({
 				includeParents: 0,
 			}))
 			.pipe(gulp.dest(options.path.build.images));
-		
-		// кодирует в webp
-		gulp.src([
-			'./src/blocks/**/*.{jpg,jpeg}',
-			'./src/components/**/*.{jpg,jpeg}',
-			'./src/partials/**/*.{jpg,jpeg}',
-			'./src/mixins/**/*.{jpg,jpeg}',
-			'./src/assets/images/**/*.{jpg,jpeg}'
-		])
-			.pipe(plugins.webp({
-				quality: 75,
-				method: 6,
-			}))
-			.pipe(plugins.rename({
-				suffix: '.jpg'
-			}))
-			.pipe(plugins.flatten({
-				includeParents: 0,
-			}))
-			.pipe(gulp.dest(options.path.build.images));
+
+		// кодирует JPG в webp
+		// gulp.src([
+		// 	'./src/blocks/**/*.{jpg,jpeg}',
+		// 	'./src/components/**/*.{jpg,jpeg}',
+		// 	'./src/partials/**/*.{jpg,jpeg}',
+		// 	'./src/mixins/**/*.{jpg,jpeg}',
+		// 	'./src/assets/images/**/*.{jpg,jpeg}'
+		// ])
+		// 	.pipe(plugins.webp({
+		// 		quality: 75,
+		// 		method: 6,
+		// 	}))
+		// 	// .pipe(plugins.rename({
+		// 	// 	suffix: '.jpg'
+		// 	// }))
+		// 	.pipe(plugins.flatten({
+		// 		includeParents: 0,
+		// 	}))
+		// 	.pipe(gulp.dest(options.path.build.images));
 
 		cb();
 	}

@@ -3,7 +3,13 @@
 		.row
 			.col-12
 				+e.__logo
-					picture
+					+critical-img({
+						pic: 'logo.svg',
+						width: 464,
+						height: 75,
+						mod: 'same'
+					})
+					//- picture
 						source(srcset='images/logo-mob.svg' media='(max-width: 1023px)')
 						img(src="images/logo.svg", alt="logo")
 

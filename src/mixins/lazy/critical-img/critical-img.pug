@@ -1,0 +1,14 @@
+//-
+	+critical-img({
+		pic: '',
+		width: 1000,
+		height: 1000,
+		mod: 'same',
+	})
+
+mixin critical-img(data)
+
+	-
+		var sizer = `data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='${data.width}'%20viewBox='0%200%20${data.width}%20${data.height}'%3E%3C/svg%3E`
+
+	img.lazy-img(src=sizer data-src=`images/${data.pic}` class=data.mod ? data.mod : false alt="pic")

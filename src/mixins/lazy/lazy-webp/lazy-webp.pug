@@ -1,0 +1,11 @@
+//-
+	+lazy-webp({pic: '', mod: ''})
+
+mixin lazy-webp(data)
+
+	- var name = data.pic.split('.')[0]
+
+	picture
+		source(srcset=pixel data-srcset=`images/${name}.webp` type="image/webp")
+		source(srcset=pixel data-srcset=`images/${data.pic}` type="image/jpeg")
+		img.lazy-img(src=pixel data-src=`images/${data.pic}` class=data.mod ? data.mod : false alt="pic")
