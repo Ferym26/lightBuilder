@@ -3,7 +3,7 @@ on:
   push:
   pull-request:
 jobs:
-  test-job:
+  build-static:
     runs-on: ubuntu-16.04
     steps:
     - uses: actions/checkout@v2
@@ -15,5 +15,5 @@ jobs:
     - name: 'install'
       run: npm i
 
-    - name: 'test'
-      run: npm run test
+    - name: 'build'
+      run: npm run dev
