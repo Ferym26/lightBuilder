@@ -68,22 +68,22 @@ gulp.task('default', gulp.series(
 
 gulp.task('build', gulp.series(
 
-	'sass-crit',
+	// 'sass-crit',
 	'pug',
 
-	gulp.parallel(
-		'sass-styles',
-	),
+	// gulp.parallel(
+	// 	'sass-styles',
+	// ),
 
-	gulp.parallel(
-		'svg',
-		'imagemin',
-		'fonts',
-		'scripts-libs',
-		'scripts',
-		'watch',
-		'favicon',
-		// 'video,
-		'modulePHPcopy',
-	),
+	// gulp.parallel(
+	// 	'svg',
+	// 	'imagemin',
+	// 	'fonts',
+	// 	'scripts-libs',
+	// 	'scripts',
+	// 	'watch',
+	// 	'favicon',
+	// 	// 'video,
+	// 	'modulePHPcopy',
+	// ),
 ));
