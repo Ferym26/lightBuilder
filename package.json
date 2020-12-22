@@ -1,5 +1,5 @@
 {
-	"name": "lightBuilder",
+	"name": "lightbuilder",
 	"version": "1.0.0",
 	"description": "lightBuilder",
 	"main": "gulpfile.js",
@@ -15,6 +15,7 @@
 	"homepage": "https://gitlab.com/",
 	"scripts": {
 		"dev": "gulp",
+		"build": "gulp build",
 		"deploy": "gulp deploy"
 	},
 	"devDependencies": {

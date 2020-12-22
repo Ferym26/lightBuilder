@@ -50,7 +50,7 @@ gulp.task('default', gulp.series(
 	gulp.parallel(
 		'sass-styles',
 	),
-	
+
 	gulp.parallel(
 		'svg',
 		'imagemin',
@@ -64,4 +64,26 @@ gulp.task('default', gulp.series(
 	),
 
 	'sync',
+));
+
+gulp.task('build', gulp.series(
+
+	'sass-crit',
+	'pug',
+
+	gulp.parallel(
+		'sass-styles',
+	),
+
+	gulp.parallel(
+		'svg',
+		'imagemin',
+		'fonts',
+		'scripts-libs',
+		'scripts',
+		'watch',
+		'favicon',
+		// 'video,
+		'modulePHPcopy',
+	),
 ));
