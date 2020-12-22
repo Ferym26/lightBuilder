@@ -15,7 +15,8 @@ jobs:
       run: npm i
 
     - name: 'build'
-      run: npm run build
       with:
         branch: 'static'
         dist: 'build'
+      run: npm run build
+
