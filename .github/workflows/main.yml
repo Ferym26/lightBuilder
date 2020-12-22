@@ -17,3 +17,4 @@ jobs:
     - name: 'build'
       run: npm run build
       branch: 'static'
+      dist: 'build'
