@@ -68,7 +68,7 @@ gulp.task('default', gulp.series(
 
 gulp.task('build', gulp.series(
 
-	// 'sass-crit',
+	'sass-crit',
 	'pug',
 
 	// gulp.parallel(
