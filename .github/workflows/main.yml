@@ -1,21 +1,21 @@
 name: 'test my project'
 on:
-	push:
+  push:
 jobs:
-	build-static:
-		runs-on: ubuntu-16.04
-		steps:
-		- uses: actions/checkout@v2
-		- uses: actions/setup-node@v1
-			name: 'setup node'
-			with:
-				node-version: '13.x'
+  build-static:
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      name: 'setup node'
+      with:
+        node-version: '13.x'
 
-		- name: 'install'
-			run: npm i
+    - name: 'install'
+      run: npm i
 
-		- name: 'build'
-			run: npm run build
-			with:
-				branch: 'static'
-				dist: 'build'
+    - name: 'build'
+      run: npm run build
+      with:
+        branch: 'static'
+        dist: 'build'
