@@ -12,7 +12,10 @@ jobs:
         name: 'setup node'
         with:
           node-version: '13.x'
+
+      - name: 'install'
         run: npm ci
+
+      - name: 'build'
         run: npm run build
-        run: cd app
-        run: git status
+
