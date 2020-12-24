@@ -14,8 +14,13 @@ jobs:
           node-version: '13.x'
 
       - name: 'install'
-        run: npm ci
+        run: npm i
 
       - name: 'build'
         run: npm run build
 
+      - name: 'git'
+        run: cd app
+
+      - name: 'git2'
+        run: git status
