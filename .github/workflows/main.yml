@@ -32,9 +32,9 @@ jobs:
 
       - name: 'git2'
         run: git status
-      -name: 'git3'
+      - name: 'git3'
         run: git add .
-      -name: 'git4'
+      - name: 'git4'
         run: git commit -m 'auto'
-      -name: 'git5'
+      - name: 'git5'
         run: git push -u origin build
