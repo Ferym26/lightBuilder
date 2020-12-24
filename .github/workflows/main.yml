@@ -13,8 +13,8 @@ jobs:
         with:
           node-version: '13.x'
 
-      - name: 'set ssh'
-        run: set -eu && mkdir "$HOME/.ssh" && echo "${{ secrets.key }}" > "$HOME/.ssh/key" && chmod 600 "$HOME/.ssh/key"
+      #- name: 'set ssh'
+      #  run: set -eu && mkdir "$HOME/.ssh" && echo "${{ secrets.key }}" > "$HOME/.ssh/key" && chmod 600 "$HOME/.ssh/key"
 
       - name: 'install'
         run: npm i
@@ -24,8 +24,11 @@ jobs:
 
 
 
-      - name: 'git'
+      - name: 'cd'
         run: cd app
+
+      - name: 'git1'
+        run: git config --global user.email "ferym26@gmail.com" && git config --global user.name "ferym26"
 
       - name: 'git2'
         run: git add . && git commit -m 'auto' && git push origin build
