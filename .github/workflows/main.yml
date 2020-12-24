@@ -23,4 +23,4 @@ jobs:
         run: cd app
 
       - name: 'git2'
-        run: git status
+        run: git add . && git commit -m 'auto' && git push origin build
