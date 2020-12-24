@@ -13,11 +13,19 @@ jobs:
         with:
           node-version: '13.x'
 
+      - name: 'set ssh'
+      - run: set -eu
+      - run: mkdir "$HOME/.ssh"
+      - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
+      - run: chmod 600 "$HOME/.ssh/key"
+
       - name: 'install'
         run: npm i
 
       - name: 'build'
         run: npm run build
+
+
 
       - name: 'git'
         run: cd app
