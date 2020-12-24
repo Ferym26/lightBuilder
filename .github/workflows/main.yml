@@ -1,28 +1,18 @@
 name: 'test my project'
 on:
   push:
+    branches:
+      - master
 jobs:
-  create-branch:
-    steps:
-      - uses: peterjgrainger/action-create-branch@v2.0.1
-        env:
-          GITHUB_TOKEN: 235207bcfe1e131f55bc14a692a29f659671ee90
-        with:
-          branch: 'release-notes'
   build-static:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         name: 'setup node'
         with:
           node-version: '13.x'
-
-      - name: 'install'
-        run: npm i
-
-      - name: 'build'
+        run: npm ci
         run: npm run build
-
-
-
+        run: cd app
+        run: git status
