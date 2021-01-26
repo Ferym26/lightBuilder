@@ -11,13 +11,15 @@ module.exports = function (gulp, options, plugins) {
 
 		// STYLES
 		gulp.watch([
-				options.path.watch.sass, 
+				options.path.watch.sass,
 				'!src/assets/css/critical/critical.scss',
-				'!src/assets/css/common/_bootstrap-opts.sass',
-				'!src/assets/css/common/_settings.scss',
+				'!src/assets/css/common/*.*',
 			], gulp.series(gulp.parallel('sass-styles')))
-		
-		gulp.watch(['./src/**/_bootstrap-opts.{scss,sass}', './src/**/_settings.scss'], gulp.series('sass-styles', 'sass-crit', 'pug'))
+
+		gulp.watch([
+			'./src/assets/css/common/*.*'
+		], gulp.series('sass-styles', 'sass-crit', 'pug'))
+
 		gulp.watch(['./src/**/critical.{scss,sass}'], gulp.series('sass-crit', 'pug'))
 
 		// PUG
