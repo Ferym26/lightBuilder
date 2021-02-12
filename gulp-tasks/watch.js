@@ -17,10 +17,9 @@ module.exports = function (gulp, options, plugins) {
 			], gulp.series(gulp.parallel('sass-styles')))
 
 		gulp.watch([
+			'./src/**/critical.{scss,sass}',
 			'./src/assets/css/common/*.*'
 		], gulp.series('sass-styles', 'sass-crit', 'pug'))
-
-		gulp.watch(['./src/**/critical.{scss,sass}'], gulp.series('sass-crit', 'pug'))
 
 		// PUG
 		global.watch = true;
