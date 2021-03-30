@@ -213,16 +213,18 @@ const uiInits = {
 	},
 
 	showModalTimer() {
-		const t = null;
+		let t = null;
 		window.addEventListener('load', resetTimer);
-		document.addEventListener('onmousemove', resetTimer);
-		document.addEventListener('onmousemove', resetTimer);
+		document.addEventListener('mousemove', resetTimer);
+		document.addEventListener('keypress', resetTimer);
+		document.addEventListener('scroll', resetTimer);
+		document.addEventListener('click', resetTimer);
 
 		function resetTimer() {
 			clearTimeout(t);
 			t = setTimeout(function() {
 				$('#modalRequest').modal('show');
-			}, 30000)
+			}, 45000)
 		}
 	},
 
