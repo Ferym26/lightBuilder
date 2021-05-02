@@ -57,7 +57,7 @@ package-lock.json
 TODO
 CheckList
 /local
-# /app
+/app
 faviconData.json
 src/assets/css/critical/critical.css
 ftpOptions.js
