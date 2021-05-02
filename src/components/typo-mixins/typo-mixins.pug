@@ -1,0 +1,44 @@
++b.typo-mixins
+	h2 Типографические миксины
+	+alert({
+		type: 'orange',
+		icon: 'warning',
+		text: 'Указываются строго в соответствии с учредительными документами организации, которая является плательщиком и получателем заказа'
+	})
+	+icon-label({
+		icon: 'like',
+		num: 3,
+	})
+	+doc-card({
+		type: 'pdf',
+		title: 'Сертификат соответствия.pdf',
+	})
+	+link-action({
+		text: 'В избранное',
+		icon: 'like',
+	})
+	br
+	+link-arrow('Показать еще')
+	+link-icon({
+		type: 'link',
+		icon: 'marker',
+		text: 'Ташкент, Чиланзар, кв-л И-24, ориентир: м. Хамза, возле мечети «Новза»',
+	})
+	+link-icon({
+		type: 'phone',
+		icon: 'i-phone3',
+		text: '+375 29 616-25-53',
+		subtext: '(факс)',
+	})
+	+link-icon({
+		type: 'time',
+		icon: 'clocks',
+	})
+	+link-icon({
+		type: 'mail',
+		icon: 'mail',
+		text: 'info@proofline.uz',
+	})
+	+phones-accordion({
+		open: true,
+	})

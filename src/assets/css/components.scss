@@ -1,0 +1,9 @@
+//Options
+@import "./common/settings";
+//Mixins sass
+@import "./mixins/*.{scss,sass}";
+
+// @import '../../blocks/dev-components_parts/**/*.{scss,sass}';
+body {
+	z-index: 1;
+}

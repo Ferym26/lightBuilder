@@ -1,0 +1,14 @@
++b.slider-box
+	h2 Слайдеры
+
+	h3 Слайдер 1
+	+slider({
+		mainClass: 'js_slider-1',
+		buttons: true,
+		pagination: true,
+	})
+		+repeat(10)
+			+lazy-img-slider({
+				mod: 'swiper-slide',
+				pic: 'content-img.jpg',
+			})

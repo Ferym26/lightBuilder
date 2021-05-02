@@ -1,0 +1,9 @@
+include ../../assets/sprites/svg/svg
+
+hr
+h3 Иконки
++b.dev-icons
+	each icon in $svg
+		+e.__item
+			+icon(icon)
+			+e.__item-title= icon

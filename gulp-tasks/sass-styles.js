@@ -2,7 +2,7 @@ module.exports = function(gulp, options, plugins) {
 
 	return function (cb) {
 
-		gulp.src([options.path.src.styles + 'styles.{scss,sass}'])
+		gulp.src([options.path.src.styles + '*.{scss,sass}'])
 			.pipe(plugins.plumber())
 			//.pipe(plugins.sourcemaps.init())
 			.pipe(plugins.sass({
@@ -24,7 +24,7 @@ module.exports = function(gulp, options, plugins) {
 			}))
 			//.pipe(plugins.sourcemaps.write())
 			.pipe(plugins.rename({
-				basename: 'styles',
+				// basename: 'styles',
 				suffix: '.min'
 			}))
 			.pipe(plugins.plumber.stop())

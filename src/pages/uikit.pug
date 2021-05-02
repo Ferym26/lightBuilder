@@ -1,0 +1,29 @@
+extends ../layout/layout
+
+block vars
+	- var bodyClass = ''
+	- var footerClass = ''
+	- var headerClass = ''
+	- var pageTitle = 'UI-kit'
+	- var dir = './'
+	- var layout = ''
+	- var uikit = true
+
+	//- Миксины
+
+block main
+
+	.container
+		p 123
+		include ../components/icons/icons
+		include ../components/grids/grids
+		//- include sticky-block/sticky-block
+		//- include pictures/pictures
+		//- include textarea/textarea
+		//- include bootstrap-grid/bootstrap-grid
+		//- include slider/slider-1
+		//- include typo-mixins/typo-mixins
+
+
+block popups
+	include ../partials/modal/modal-request/modal-request

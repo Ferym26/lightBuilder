@@ -30,7 +30,7 @@ module.exports = function (gulp, options, plugins) {
 
 		// JS
 		gulp.watch('./src/**/*.js', gulp.series('scripts')).on("change", plugins.browserSync.reload);
-		gulp.watch('./src/assets/js/vendor/**/*.js', gulp.series('scripts-libs')).on('change', plugins.browserSync.reload);
+		gulp.watch('./src/assets/js/vendors/**/*.js', gulp.series('scripts-libs')).on('change', plugins.browserSync.reload);
 
 		// HTML
 		gulp.watch(options.path.build.html + '*.html').on('change', plugins.browserSync.reload);

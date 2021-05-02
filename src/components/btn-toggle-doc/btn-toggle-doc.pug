@@ -1,0 +1,115 @@
+.doc
+	.doc__container
+		.doc-title Кнопка тумблер
+		.doc__part
+			a.doc__part-title(href='#doc-1', id='doc-1') Кнопка тумблер
+			textarea.doc-pre.codemirror-pug.
+				.btn-toggle-wrap
+					.btn.btn-toggle(data-target='.btn-toggle-target-1') Кнопка тумблер 1
+					.btn-toggle-target.btn-toggle-target-1 Цель тумблера 1
+			.btn-toggle-wrap
+				.btn.btn-toggle(data-target='.btn-toggle-target-1') Кнопка тумблер 1
+				.btn-toggle-target.btn-toggle-target-1 Цель тумблера 1
+		.doc__part
+			a.doc__part-title(href='#doc-2', id='doc-2') Кнопка тумблер: закрытие по клику за границами цели
+			textarea.doc-pre.codemirror-pug.
+				// После активации цели, клик за ее границами приведет к деактивации
+				// За данное свойство отвечает аттрибут data-overflow-click
+				.btn-toggle-wrap
+					.btn.btn-toggle(data-target='.btn-toggle-target-2', data-overflow-click="true") Кнопка тумблер 2
+					.btn-toggle-target.btn-toggle-target-2 Цель тумблера 2
+			.btn-toggle-wrap
+				.btn.btn-toggle(data-target='.btn-toggle-target-2', data-overflow-click="true") Кнопка тумблер 2
+				.btn-toggle-target.btn-toggle-target-2 Цель тумблера 2
+		.doc__part
+			a.doc__part-title(href='#doc-3', id='doc-3') Кнопка тумблер: закрытие по клику за границами цели по чекпоинту
+			textarea.doc-pre.codemirror-pug.
+				// В данном случае работа закрытия по клику за границами цели будет активирована только при разрешении > 580 (data-overflow-click-min-width="580")
+				// За данное свойство отвечает аттрибут data-overflow-click-min-width
+				.btn-toggle-wrap
+					.btn.btn-toggle(data-target='.btn-toggle-target-3', data-overflow-click="true", data-overflow-click-min-width="580") Кнопка тумблер 3
+					.btn-toggle-target.btn-toggle-target-3 Цель тумблера 3
+			.btn-toggle-wrap
+				.btn.btn-toggle(data-target='.btn-toggle-target-3', data-overflow-click="true", data-overflow-click-min-width="580") Кнопка тумблер 3
+				.btn-toggle-target.btn-toggle-target-3 Цель тумблера 3
+		.doc__part
+			a.doc__part-title(href='#doc-4', id='doc-4') Кнопка тумблер: сторонняя кнопка закрытия цели
+			textarea.doc-pre.codemirror-pug.
+				// Для закрытия цели возможно создать элемент внутри или снаружи цели и управлять активностью
+				// Для этого необходимо создать кнопку тумблер с аналогичной целью
+				// для данного примера - .btn-toggle(data-target='.btn-toggle-target-4')
+				.btn-toggle-wrap
+					.btn.btn-toggle(data-target='.btn-toggle-target-4') Кнопка тумблер 4
+					.btn-toggle-target.btn-toggle-target-4 Цель тумблера 4
+						button.btn-toggle(data-target='.btn-toggle-target-4') Нажми что бы закрыть
+			.btn-toggle-wrap
+				.btn.btn-toggle(data-target='.btn-toggle-target-4') Кнопка тумблер 4
+				.btn-toggle-target.btn-toggle-target-4 Цель тумблера 4
+					button.btn-toggle(data-target='.btn-toggle-target-4') Нажми что бы закрыть
+		.doc__part
+			a.doc__part-title(href='#doc-5', id='doc-5') Кнопка тумблер: исспользование для активации боковых меню
+			textarea.doc-pre.codemirror-pug.
+				// В данном примере исспользованы data-overflow-click (что закрывает цель по клику за пределы)
+				// и кнопка закрытия внутри цели
+				// позиционирование и пр задается в стилях css
+				.btn-toggle-wrap
+					.btn.btn-toggle(data-target='.btn-toggle-target-5') Кнопка тумблер 5
+					.btn-toggle-target.btn-toggle-target-fixed.btn-toggle-target-5 Цель тумблера 5
+						button.btn-toggle(data-target='.btn-toggle-target-5') Нажми что бы закрыть
+			.btn-toggle-wrap
+				.btn.btn-toggle(data-target='.btn-toggle-target-5', data-overflow-click='true') Кнопка тумблер 5
+				.btn-toggle-target.btn-toggle-target-fixed.btn-toggle-target-5 Цель тумблера 5
+					button.btn-toggle(data-target='.btn-toggle-target-5') Нажми что бы закрыть
+		.doc__part
+			a.doc__part-title(href='#doc-6', id='doc-6') Кнопка тумблер: исспользование для активации боковых меню с дополнительным отсекающим слоем
+			textarea.doc-pre.codemirror-pug.
+				// Исспользуя дополнительную кнопку тумблера как промежуточный слой между меню и основным контентом
+				// мы избегаем нежелательные клики при закрытие 'по клику' за пределами меню
+				// позиционирование и пр задается в стилях css
+				.btn-toggle-wrap
+					.btn.btn-toggle(data-target='.btn-toggle-target-6') Кнопка тумблер 6
+					.btn-toggle-target-6.btn-toggle-target-fixed__wrap
+						.btn-toggle-target-fixed__overflow.btn-toggle(data-target='.btn-toggle-target-6')
+						.btn-toggle-target.btn-toggle-target-fixed Цель тумблера 6
+							button.btn-toggle(data-target='.btn-toggle-target-6') Нажми что бы закрыть
+			.btn-toggle-wrap
+				.btn.btn-toggle(data-target='.btn-toggle-target-6', data-overflow-click='true') Кнопка тумблер 6
+				.btn-toggle-target-6.btn-toggle-target-fixed__wrap
+					.btn-toggle-target-fixed__overflow.btn-toggle(data-target='.btn-toggle-target-6')
+					.btn-toggle-target.btn-toggle-target-fixed Цель тумблера 6
+						button.btn-toggle(data-target='.btn-toggle-target-6') Нажми что бы закрыть
+		.doc__part
+			a.doc__part-title(href='#doc-7', id='doc-7') Кнопка тумблер: закрытие меню свайпом
+			textarea.doc-pre.codemirror-pug.
+				// Для активации возможности свайпа исспользуется аттрибут data-toggle-swipe; стандартно значение 'false'
+				// направление свайпа задается аттрибутом data-toggle-swipe-direction, возможны - left/right; стандартно значение 'left'
+				.btn-toggle-wrap
+					.btn.btn-toggle(data-target='.btn-toggle-target-7', data-toggle-swipe="true", data-toggle-swipe-direction="left") Кнопка тумблер 7
+					.btn-toggle-target-7.btn-toggle-target-fixed__wrap
+						.btn-toggle-target-fixed__overflow.btn-toggle(data-target='.btn-toggle-target-7')
+						.btn-toggle-target.btn-toggle-target-fixed Цель тумблера 7
+							button.btn-toggle(data-target='.btn-toggle-target-7') Нажми что бы закрыть
+			.btn-toggle-wrap
+				.btn.btn-toggle(data-target='.btn-toggle-target-7', data-toggle-swipe="true", data-toggle-swipe-direction="left") Кнопка тумблер 7
+				.btn-toggle-target-7.btn-toggle-target-fixed__wrap
+					.btn-toggle-target-fixed__overflow.btn-toggle(data-target='.btn-toggle-target-7')
+					.btn-toggle-target.btn-toggle-target-fixed Цель тумблера 7
+						button.btn-toggle(data-target='.btn-toggle-target-7') Нажми что бы закрыть
+		.doc__part
+			a.doc__part-title(href='#doc-8', id='doc-8') Кнопка тумблер: возможность добавить оверфлоу на body
+			textarea.doc-pre.codemirror-pug.
+				// Для добавлении(в активном состоянии) body {overflow: hidden}, отвечает аттрибут data-body-overflow; стандартно значение 'false'
+				// ВНИМАНИЕ!!!
+				// Для исспользование данной фичи необходимо в css добавить свойство .ofh {overflow: hidden!important;}
+				.btn-toggle-wrap
+					.btn.btn-toggle(data-target='.btn-toggle-target-8', data-toggle-swipe="true", data-toggle-swipe-direction="left", data-body-overflow="true") Кнопка тумблер 8
+					.btn-toggle-target-8.btn-toggle-target-fixed__wrap
+						.btn-toggle-target-fixed__overflow.btn-toggle(data-target='.btn-toggle-target-8')
+						.btn-toggle-target.btn-toggle-target-fixed Цель тумблера 8
+							button.btn-toggle(data-target='.btn-toggle-target-8') Нажми что бы закрыть
+			.btn-toggle-wrap
+				.btn.btn-toggle(data-target='.btn-toggle-target-8', data-toggle-swipe="true", data-toggle-swipe-direction="left", data-body-overflow="true") Кнопка тумблер 8
+				.btn-toggle-target-8.btn-toggle-target-fixed__wrap
+					.btn-toggle-target-fixed__overflow.btn-toggle(data-target='.btn-toggle-target-8')
+					.btn-toggle-target.btn-toggle-target-fixed Цель тумблера 8
+						button.btn-toggle(data-target='.btn-toggle-target-8') Нажми что бы закрыть

@@ -91,7 +91,7 @@
 
 	@if $direction == l {
 		border-width: $height / 2 + px $width + px $height / 2 + px 0;
-		border-color: transparent $bg transparent transparent;		
+		border-color: transparent $bg transparent transparent;
 	}
 
 	@if $direction == tl {
@@ -121,16 +121,4 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-}
-
-@mixin font600 {
-	font-family: $font-600;
-}
-
-@mixin font400 {
-	font-family: $font-400;
-}
-
-@mixin font300 {
-	font-family: $font-300;
 }

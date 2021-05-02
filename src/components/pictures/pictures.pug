@@ -1,0 +1,42 @@
++b.pictures
+
+	h2.h2 Picture tag
+	
+	+e.__item
+		h3.h3 Изображение не грузится < 768
+		picture
+			source(media='(max-width: 767px)', srcset= pixel)
+			source(media='(min-width: 768px)', srcset=`images/content-img.jpg`)
+			img(src=`images/content-img.jpg` alt='pic')
+
+	+e.__item
+		h3.h3 Обычный picture
+		picture
+			source(srcset='./images/content-img.jpg' media='(min-width: 1435px)')
+			source(srcset='./images/content-img_md.jpg' media='(min-width: 1024px) and (max-width: 1434px)')
+			source(srcset='./images/content-img_sm.jpg' media='(max-width: 1023px)')
+			+e('img').pic(src='./images/content-img.jpg' alt='pic')
+
+	+e.__item
+		h3.h3 LAZY загрузка картинки в picture
+		+lazy-picture({
+			mod: false,
+			src_source_arr: [
+				{
+					data_srcset: 'images/content-img.jpg',
+					srcset: 'images/placeholder/content-img.jpg',
+					media: '768'
+				},{
+					data_srcset: 'images/content-img_md.jpg',
+					srcset: 'images/placeholder/content-img_md.jpg',
+					media: '0'
+				}
+			],
+			src: 'images/content-img.jpg',
+			src_placeholder: 'images/placeholder/content-img.jpg',
+		})
+
+	+e.__item
+		h3 fix прозрачного градиента на сафари
+		.safari-trp-gradient
+			.safari-trp-gradient__grad
