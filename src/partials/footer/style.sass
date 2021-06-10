@@ -1,10 +1,10 @@
 .footer
 	position: relative
+	background: #2B2A28
 	z-index: 566
 
 	&__content
-		padding: 52px 0
-		background: #34393c
+		padding: 80px 0
 
 		+media($lg)
 			padding: 20px 0 10px
@@ -22,59 +22,43 @@
 				flex-direction: column
 				padding: 0
 
-	&__menu
-
-		+media($lg)
-			margin-bottom: 20px
-
-		&-link
-			text-transform: uppercase
-			color: #fff
-			font-size: 14px
-
-			&:hover
-				text-decoration: underline
-				color: #fff
-
 	&__list
 		display: flex
+		justify-content: center
 
 		&-item
+			display: flex
+			align-items: center
+			justify-content: center
 			flex-shrink: 0
-			width: 225px
-			padding: 5px 15px 0
-			font-size: 14px
+			width: calc(100% / 3)
+			padding: 0 15px
+			font-size: 18px
 			color: #fff
 			font-weight: 400
-			text-align: right
-			border-right: 2px solid $c-main
+			text-align: center
 
 			+media($lg)
 				width: calc(100% / 3)
 				text-align: center
 
-			&:last-child
-
-				+media($lg)
-					border: none
+			&:not(:last-child)
+				border-right: 2px solid $c-main
 
 	&__copyright
-		padding: 20px 0
+		padding: 11px 0
+		border-top: 1px solid rgba(#fff, 0.15)
 		text-align: center
-		background-color: #2f3336
 
 		&-text
 			display: inline-block
-			color: #fafafa
-			font-size: 15px
+			color: #fff
+			font-size: 18px
 
 			a
 				display: inline-block
-				color: #fafafa
+				color: #fff
 				text-decoration: none
 
 				&:hover
 					text-decoration: underline
-
-	.container
-		height: auto !important

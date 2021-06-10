@@ -1,16 +1,13 @@
 +b('footer').footer
 
-	+e.__content
-		.container
-			+e.__content-inner
-				+e('nav').__menu
-					+e('a').__menu-link(href='#modalCompare' data-toggle='modal') Сравнение пакетов
-				+e.__list
-					+e.__list-item 83 отделения по всей Беларуси
-					+e.__list-item 31 год на рынке банковских услуг
-					+e.__list-item Часть австрийской банковской группы Raiffeisen Bank International
+	.container
+		+e.__content
+			+e.__list
+				+e.__list-item #[span Лучший банк Беларуси по&nbsp;версии #[br] Global Finance и EMEA Finance]
+				+e.__list-item #[span 32 года на рынке банковских услуг]
+				+e.__list-item #[span Часть австрийской банковской группы Raiffeisen&nbsp;Bank&nbsp;International]
 
 	+e.__copyright
 		.container
-			+e.__copyright-text © #[a(href="https://www.priorbank.by/" target="_blank") Приорбанк] 2020
+			+e.__copyright-text © #[a#footerLink(href="https://www.priorbank.by/" target="_blank") Приорбанк] 2021
 

@@ -9,3 +9,13 @@
 		button.btn#btn(data-toggle="modal" data-target="#modalRequest") Оформить заявку 1
 
 	+icon('icon')
+
+	picture
+		source(media='(min-width: 768px)' srcset='images/hero-card3@2.jpg 2x, images/hero-card3.jpg 1x' )
+		img.img(src='images/hero-card3.jpg' alt="pic")
+
+	img.lazy-img(
+			data-src="images/phone.png"
+			data-srcset="images/phone@2.png 2x"
+			alt="pic"
+		)

@@ -1,23 +1,20 @@
 .btn
 	$this: &
-
 	position: relative
 	display: inline-block
-	height: 72px
-	padding: 0 50px
-
+	height: 60px
+	padding: 0 30px
 	font-weight: 700
-	font-size: 20px
-	line-height: 72px
-	border-radius: 2px
+	font-size: 18px
+	line-height: 60px
+	border-radius: 15px
 	text-decoration: none
 	text-align: center
-	letter-spacing: -0.5px
-	color: #221F20
+	color: $c-text !important
 	text-decoration: none !important
 	background-color: $c-main
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-
+	box-shadow: 0px 5px 30px rgba(255, 214, 0, 0.5)
+	background: linear-gradient(88.32deg, #FFED00 3.75%, #FFD600 93.62%)
 	border: none
 	outline: none
 	cursor: pointer
@@ -25,12 +22,14 @@
 	white-space: nowrap
 	+transish
 
-	&:hover
-		background-color: #EBE200
+	+media($lg)
+		font-size: 16px
 
+	&:hover
+		box-shadow: 0px 3px 15px rgba(255, 214, 0, 1)
 
 	&:active
-		background-color: #D6CE00
+		// transform: translate(0, 2px)
 
 	&:hover,
 	&:active,
@@ -43,6 +42,13 @@
 		background-image: none !important
 		color: #B9BABE !important
 		cursor: default
+		box-shadow: none
+
+	.icon-check
+		background-color: #fff
+
+		.icon
+			fill: $c-main
 
 	// Обводка
 	&--outline
@@ -71,3 +77,143 @@
 		height: 48px
 		padding: 0 30px
 		line-height: 48px
+
+	&--white
+		color: #000
+		background: #fff
+		box-shadow: none
+		border: 1px solid #E0E0E0
+
+		+mediaMin($md)
+
+			&:hover
+				border-color: $trp
+				box-shadow: 0px 5px 30px rgba(255, 214, 0, 0.5)
+				background: linear-gradient(180deg, #FFED00 0%, #FFD600 100%)
+
+				.icon-check
+					border-color: $trp
+
+					.icon
+						fill: #FFD600
+
+		&:active
+			background: lighten($c-main, 20%)
+
+		&[disabled]
+			background: #fff !important
+			color: $c-bg !important
+
+		.icon-check
+			background: #F8F8F8
+			border: 1px solid #E0E0E0
+
+			.icon
+				fill: #E0E0E0
+
+	&--icon
+		padding-left: 76px
+
+		.icon-check
+			position: absolute
+			+sizeblock(30px)
+			+hcenter
+			left: 15px
+			+circle
+
+			.icon
+				position: absolute
+				+sizeblock(16px, 12px)
+				+center
+
+	&--black
+		background: #000
+		color: #fff !important
+
+		&:hover
+			background: lighten(#000, 15%)
+
+
+.btn-next
+	position: relative
+	display: inline-block
+	height: 30px
+	padding: 0
+	padding-right: 20px
+	font-size: 26px
+	line-height: 30px
+	border-radius: 0
+	text-decoration: none
+	text-align: center
+	color: #06A199
+	text-decoration: none !important
+	background-color: #fff
+	box-shadow:  none
+	border: none
+	outline: none
+	cursor: pointer
+	user-select: none
+	white-space: nowrap
+	+transish
+
+	+media($lg)
+		font-size: 18px
+
+	.icon
+		position: absolute
+		top: 11px
+		right: 0
+		+sizeblock(14px)
+		fill: #06A199
+		+transish
+
+		+media($lg)
+			top: 10px
+
+	&:hover
+
+		.icon
+			right: -5px
+
+
+.btn-prev
+	position: relative
+	display: inline-block
+	height: 30px
+	padding: 0
+	padding-left: 20px
+	font-size: 26px
+	line-height: 30px
+	border-radius: 0
+	text-decoration: none
+	text-align: center
+	color: #06A199
+	text-decoration: none !important
+	background-color: #fff
+	box-shadow:  none
+	border: none
+	outline: none
+	cursor: pointer
+	user-select: none
+	white-space: nowrap
+	+transish
+
+	+media($lg)
+		font-size: 18px
+
+	.icon
+		position: absolute
+		top: 11px
+		left: 0
+		+sizeblock(14px)
+		fill: #06A199
+		+transish
+		transform: rotate(180deg)
+
+		+media($lg)
+			top: 10px
+
+	&:hover
+
+		.icon
+			left: -5px

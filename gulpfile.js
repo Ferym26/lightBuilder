@@ -23,6 +23,7 @@ plugins.shellExec = require('shell-exec');
 plugins.fs = require('fs');
 plugins.flatten = require('gulp-flatten');
 plugins.ftp = require('vinyl-ftp');
+const json = JSON.parse(plugins.fs.readFileSync('./package.json'));
 
 gulp.task('clean', require('./gulp-tasks/clean')(gulp, options, plugins));
 gulp.task('pug', require('./gulp-tasks/pug')(gulp, options, plugins));
@@ -39,7 +40,7 @@ gulp.task('modulePHPcopy', require('./gulp-tasks/modulePHPcopy')(gulp, options, 
 gulp.task('fonts', require('./gulp-tasks/fonts')(gulp, options, plugins));
 gulp.task('favicon', require('./gulp-tasks/favicon')(gulp, options, plugins));
 gulp.task('watch', require('./gulp-tasks/watch')(gulp, options, plugins));
-gulp.task('deploy', require('./gulp-tasks/deploy')(gulp, options, plugins, ftpOpts));
+gulp.task('deploy', require('./gulp-tasks/deploy')(gulp, options, plugins, ftpOpts, json));
 
 
 gulp.task('default', gulp.series(
