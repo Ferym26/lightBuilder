@@ -202,6 +202,23 @@ const uiInits = {
 			},
 			offset: '40%'
 		});
+
+		const sectionTitleSM = new ScrollMagic.Controller();
+		const sectionTitleTL = gsap.timeline();
+		sectionTitleTL.addLabel('start')
+		sectionTitleTL.from(".sposob__card", {
+			y: 150,
+			scale: 0.8,
+			transformOrigin: '50% 100%',
+			opacity: 0,
+		}, 'start');
+		new ScrollMagic.Scene({
+				triggerElement: '.sposob',
+				triggerHook: 1,
+				duration: "80%"
+			})
+			.setTween(sectionTitleTL)
+			.addTo(sectionTitleSM);
 	},
 
 	scrollTo() {

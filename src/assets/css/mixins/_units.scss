@@ -17,3 +17,7 @@
 @function vh($num, $root: 1024) {
   @return strip-unit($num) / $root * 100vh;
 }
+
+@function relSize($base, $size) {
+	@return $size * 100% / $base
+}
