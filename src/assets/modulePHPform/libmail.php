@@ -132,6 +132,8 @@ class Mail
      */
     private $idna_convert = false;
 
+    private $sub = '';
+
     /**
      * Инициализаця
      * @param string $charset кодировка письма 
@@ -536,6 +538,7 @@ class Mail
      */
     public function Subject($subject, $resource = 'webi')
     {
+        /*echo $subject;*/
         if (!strlen($resource))
             $resource = 'webi';
         $this->headers[$resource]['Subject'] = "=?".$this->charset."?B?".base64_encode(strtr($subject, "\r\n", "  "))."?=";
@@ -1047,7 +1050,6 @@ class Mail
                 return false;
             }
 
-
             fputs($smtp_conn, base64_encode($this->smtp['pass'])."\r\n");
             //$this->add_log("Я: ". base64_encode($this->smtp_pass)."\n"); // тут пароль закодирован будет виден в логах
             $this->add_log("Я: parol_skryt\n"); // а так пароль скрыт в логах
@@ -1131,7 +1133,7 @@ class Mail
                     $this->status_mail['message'] = "сервер не принял команду DATA черз SMTP";
                     return false;
                 }
-
+                fputs($smtp_conn, "Subject:".$this->headers[$body_resource]['Subject']."\r\n");
                 fputs($smtp_conn, $this->ready_headers[$key_res]."\r\n".$this->body[$body_resource]."\r\n.\r\n");
                 $this->add_log("Я: ".$this->ready_headers[$key_res]."\r\n".$this->body[$body_resource]."\r\n.\r\n");
                 $data = $this->get_data($smtp_conn)."\n";
