@@ -4,56 +4,11 @@ block vars
 	- var bodyClass = ''
 	- var footerClass = ''
 	- var headerClass = ''
-	- var pageTitle = 'index'
+	- var pageTitle = 'icons'
 	- var dir = './'
 	- var layout = ''
 
 
 block main
-
-	.container
-		+critical-webp({
-			pic: 's5-bg.jpg',
-			width: 2129,
-			height: 1080,
-			mod: 'same',
-		})
-
-
 	.container
 		include ../blocks/block/block
-		include ../blocks/request/request
-
-
-	.container
-		p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae vel nulla voluptatum quis vitae molestias itaque eligendi atque cumque sapiente eum numquam, similique adipisci aliquam quae repudiandae autem fugit praesentium.
-		p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae vel nulla voluptatum quis vitae molestias itaque eligendi atque cumque sapiente eum numquam, similique adipisci aliquam quae repudiandae autem fugit praesentium.
-		p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae vel nulla voluptatum quis vitae molestias itaque eligendi atque cumque sapiente eum numquam, similique adipisci aliquam quae repudiandae autem fugit praesentium.
-		p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae vel nulla voluptatum quis vitae molestias itaque eligendi atque cumque sapiente eum numquam, similique adipisci aliquam quae repudiandae autem fugit praesentium.
-		p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae vel nulla voluptatum quis vitae molestias itaque eligendi atque cumque sapiente eum numquam, similique adipisci aliquam quae repudiandae autem fugit praesentium.
-		p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae vel nulla voluptatum quis vitae molestias itaque eligendi atque cumque sapiente eum numquam, similique adipisci aliquam quae repudiandae autem fugit praesentium.
-		p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae vel nulla voluptatum quis vitae molestias itaque eligendi atque cumque sapiente eum numquam, similique adipisci aliquam quae repudiandae autem fugit praesentium.
-
-	.container
-		+slider({
-			mainClass: 'js_slider',
-			buttons: true,
-			pagination: true,
-		})
-			.swiper-slide
-				+lazy-img-slider({pic: 'card1.png'})
-			.swiper-slide
-				+lazy-img-slider({pic: 'card1.png'})
-			.swiper-slide
-				+lazy-img-slider({pic: 'card1.png'})
-
-	.container
-		h2 Images webp
-		+lazy-webp({pic: 's5-bg.jpg'})
-		+lazy-webp({pic: 'pipe-1.png'})
-
-
-block popups
-	include ../partials/modal/modal-request/modal-request
-	include ../partials/modal/modal-callback/modal-callback
-	include ../partials/modal/modal-error/modal-error
