@@ -11,6 +11,10 @@
 	align-items: center
 	justify-content: center
 
+	.llc-clip-3
+		display: inline-block
+		clip-path: polygon(-1px 37px,100% 37px,100% 73px,calc(100% - 19px) 73px,calc(100% - 19px) 57px,19px 57px,19px 73px,-1px 73px)
+
 .llc-icon
 	display: block
 	+sizeblock(110px)
@@ -51,11 +55,16 @@
 					animation: moveRight 0.8s ease-in-out infinite alternate
 
 	&--i3
+		// clip-path: polygon(0 37px,100% 37px,100% 73px,calc(100% - 19px) 73px,calc(100% - 19px) 57px,19px 57px,19px 73px,0 73px)
 
 		&:hover
 
 			.llc-fill
 				animation: fillBlink2 0.8s ease-in-out infinite alternate
+
+		.llc-fill
+			transform-origin: 55px 38px
+			transition: transform 0.8s ease-in-out
 
 	&--i4
 
@@ -87,9 +96,9 @@
 
 @keyframes fillBlink2
 	0%
-		fill: #52ADD2
+		transform: scale(0)
 	100%
-		fill: #fff
+		transform: scale(1)
 
 @keyframes moveRight
 	0%
